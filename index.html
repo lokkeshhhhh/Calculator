@@ -75,14 +75,22 @@
         document.getElementById('display').value += char;
     }
 
-    function someMaths() {
-        const result = eval(document.getElementById('display').value);
-
-        document.getElementById('display').value = result;
-    }
-
     function clearDisplay() {
         document.getElementById('display').value = '';
     }
+
+    function someMaths() {
+        const result = eval(document.getElementById('display').value);
+        document.getElementById('display').value = result;
+    }
+
+    // Method 2nd--- (coz use of eval is not a good practice.)
+
+
+    // function someMaths() {
+
+    // }
+
+
 </script>
 </html>
