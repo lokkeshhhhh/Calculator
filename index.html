@@ -4,31 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <style>
+        html,body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator{
+            width: auto;
+            height: auto;
+            border: 1px solid rgba(0, 0, 0, 0.105);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgba(241, 254, 255, 0.272);
+        }
+        input{
+            width: 292px;
+            padding: 20px 0px;
+            background-color: rgb(234, 234, 234);
+            border: 1px solid rgba(0, 0, 0, 0.105);
+            border-radius: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        button{
+            padding: 15px 0px;
+            margin: 5px 5px;
+            width: 60px;
+            background-color: rgb(225, 225, 225);
+            border: 1px solid rgba(0, 0, 0, 0.105);
+            font-size: 20px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="calculator">
         <div class="display">
             <input type="text" id="display" readonly>
         </div>
 
         <div class="buttons">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button onclick="addCharOperator('7')">7</button>
+            <button onclick="addCharOperator('8')">8</button>
+            <button onclick="addCharOperator('9')">9</button>
+            <button onclick="addCharOperator('+')">+</button>
+            <br>
+            <button onclick="addCharOperator('4')">4</button>
+            <button onclick="addCharOperator('5')">5</button>
+            <button onclick="addCharOperator('6')">6</button>
+            <button onclick="addCharOperator('-')">-</button>
+            <br>
+            <button onclick="addCharOperator('1')">1</button>
+            <button onclick="addCharOperator('2')">2</button>
+            <button onclick="addCharOperator('3')">3</button>
+            <button onclick="addCharOperator('*')">*</button>
+            <br>
+            <button onclick="addCharOperator('0')">0</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="addCharOperator('/')">/</button>
+            <button onclick="someMaths()">=</button>
         </div>
     </div>
 </body>
+<script>
+    
+    function addCharOperator(char){
+        document.getElementById('display').value += char;
+    }
+
+    function someMaths() {
+        const result = eval(document.getElementById('display').value);
+
+        document.getElementById('display').value = result;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+</script>
 </html>
