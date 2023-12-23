@@ -63,6 +63,9 @@
         #operator:active{
             background-color: rgba(56, 37, 3, 0.897);
         }
+        #ac{
+            background-color: #380346fb;
+        }
 
         @media screen and (max-width: 380px) {
             input{
@@ -101,7 +104,7 @@
         </div>
 
         <div class="buttons">
-            <button onclick="clearDisplay()">AC</button>
+            <button onclick="clearDisplay()" id="ac">AC</button>
             <button onclick="addCharOperator('.')">.</button>
             <button onclick="addCharOperator('/')">/</button>
             <button onclick="deleteChar()" id="operator">⌫</button>
