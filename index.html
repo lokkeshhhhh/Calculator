@@ -138,19 +138,6 @@
     </div>
 </body>
 <script>
-
-    // const buttons = document.querySelectorAll('button');
-    for(let i=0; i<buttons.length; i++ ){
-        buttons[i].addEventListener('mouseout', () => {
-            buttons[i].style.backgroundColor = '#e1e1e1';
-        })
-
-        buttons[i].addEventListener('click', () => {
-            buttons[i].style.backgroundColor = 'green';
-        })
-    }
-
-    
     
     function addCharOperator(char){
         document.getElementById('display').value += char;
