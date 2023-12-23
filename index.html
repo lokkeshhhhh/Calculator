@@ -65,6 +65,11 @@
         </div>
 
         <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="addCharOperator('/')">/</button>
+            <button onclick="someMaths()" id="operator">=</button>
+            <button onclick="deleteChar()">X</button>
+            <br>
             <button onclick="addCharOperator('7')">7</button>
             <button onclick="addCharOperator('8')">8</button>
             <button onclick="addCharOperator('9')">9</button>
@@ -81,16 +86,13 @@
             <button onclick="addCharOperator('*')" id="operator">*</button>
             <br>
             <button onclick="addCharOperator('0')">0</button>
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="addCharOperator('/')">/</button>
-            <button onclick="someMaths()" id="operator">=</button>
+            
         </div>
     </div>
 </body>
 <script>
 
     // const buttons = document.querySelectorAll('button');
-
     for(let i=0; i<buttons.length; i++ ){
         buttons[i].addEventListener('mouseout', () => {
             buttons[i].style.backgroundColor = '#e1e1e1';
@@ -110,6 +112,19 @@
     function clearDisplay() {
         document.getElementById('display').value = '';
     }
+
+    function deleteChar(){
+        const stringValue = document.getElementById('display').value;
+        const arrayValue = stringValue.split("");
+
+        arrayValue.pop();
+
+        const reString = arrayValue.join("");
+
+        document.getElementById('display').value = reString;
+
+    }
+    
 
     function someMaths() {
         try{
