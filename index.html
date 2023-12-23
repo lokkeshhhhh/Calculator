@@ -116,8 +116,7 @@
             const result = eval(document.getElementById('display').value);
         document.getElementById('display').value = result;
         }catch(error){
-            const result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
+            document.getElementById('display').value = "Invalid Input";
         }
     }
 
