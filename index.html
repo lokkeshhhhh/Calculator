@@ -44,6 +44,9 @@
             cursor: pointer;
             text-align: center;
         }
+        #zero{
+            width: 240px;
+        }
         #operator{
             background-color: rgb(171, 103, 1);
         }
@@ -56,6 +59,8 @@
         #operator:active{
             background-color: rgba(56, 37, 3, 0.897);
         }
+
+        
     </style>
 </head>
 <body>
@@ -66,9 +71,9 @@
 
         <div class="buttons">
             <button onclick="clearDisplay()">C</button>
-            <button onclick="addCharOperator('.')"></button>
+            <button onclick="addCharOperator('.')">.</button>
             <button onclick="addCharOperator('/')">/</button>
-            <button onclick="someMaths()" id="operator">=</button>
+            <button onclick="deleteChar()" id="operator">⌫</button>
             <br>
             <button onclick="addCharOperator('7')">7</button>
             <button onclick="addCharOperator('8')">8</button>
@@ -85,7 +90,8 @@
             <button onclick="addCharOperator('3')">3</button>
             <button onclick="addCharOperator('*')" id="operator">*</button>
             <br>
-            <button onclick="addCharOperator('0')">0</button>
+            <button onclick="addCharOperator('0')" id="zero">0</button>
+            <button onclick="someMaths()" id="operator">=</button>
             
         </div>
     </div>
