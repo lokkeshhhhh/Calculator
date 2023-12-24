@@ -66,12 +66,10 @@
         const arrayValue = stringValue.split("");
 
         arrayValue.pop();
-
         const reString = arrayValue.join("");
-
         document.getElementById('display').value = reString;
 
-        if(stringValue == "Syntax Error" || stringValue == "undefined"){
+        if(stringValue == "Syntax Error"){
             document.getElementById('display').value = '0';
         }
     }
@@ -80,15 +78,26 @@
 
 // Calculate via eval method if there is not any error
     function someMaths() {
+        
+
         try{
-            const result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
+            const stringValue = document.getElementById('display').value;
+            const arrayValue = stringValue.split("");
+
+            if(arrayValue[0] == 0){
+                arrayValue.shift();
+            }
+            const reString = arrayValue.join("");
+
+            const preResult = document.getElementById('display').value = reString;
+            const result = eval(preResult);
+            document.getElementById('display').value = result;
         }catch(error){
             document.getElementById('display').value = "Syntax Error";
         }
 
         if(document.getElementById('display').value == 'undefined'){
-            document.getElementById('display').value = "Syntax Error";
+            document.getElementById('display').value = "0";
         }
     }
 
