@@ -97,24 +97,35 @@
 // Calculate via eval method if there is not any error
     function someMaths() {
         
-
         try{
             const stringValue = document.getElementById('display').value;
-            const arrayValue = stringValue.split("");
 
-            for(let i=0;i<arrayValue.length;i++){
-                for(let i=0;i<arrayValue.length;i++){
-                    if(arrayValue[i] == 0){
-                        arrayValue.shift();
-                    }else{
-                        break;
-                    }
-                }
+            let arrayValue;
+            let joined;
+            
+            if(stringValue.includes('+')){
+                arrayValue = stringValue.split("+");
+                joined = '+';
+            } else if(stringValue.includes('-')){
+                arrayValue = stringValue.split("-");
+                joined = '-';
+            }else if(stringValue.includes('*')){
+                arrayValue = stringValue.split("*");
+                joined = '*';
+            }else{
+                arrayValue = stringValue.split("/");
+                joined = '/';
             }
-            const reString = arrayValue.join("");
 
-            const preResult = document.getElementById('display').value = reString;
-            const result = eval(preResult);
+            const newArrayValue = arrayValue.map((element) => {
+                return element.replace(/^0+/,"");
+            })
+
+            const reString = newArrayValue.join(joined);
+            
+            const result = eval(reString);
+            console.log(reString);
+            
             document.getElementById('display').value = result;
         }catch(error){
             document.getElementById('display').value = "Syntax Error";
