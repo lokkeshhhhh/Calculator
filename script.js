@@ -6,7 +6,7 @@
 
 
         <div class="display">
-            <input type="text" id="display" readonly placeholder="_">
+            <input type="text" id="display" readonly placeholder="0">
         </div>
 
         <div class="buttons">
@@ -52,7 +52,7 @@
     and the icon's and credit-1's display to 'block.' After a 2-second delay(setTimeout function),
     we can change the display property from 'none' to 'block' and 'block' to 'none.'" 
     like this -
-    
+
         setTimeout(() => {
         document.getElementById("credit-1").style.display = "none";
         document.getElementById("icon").style.display = "none";
