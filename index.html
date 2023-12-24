@@ -12,7 +12,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .calculator{
             width: auto;
             height: auto;
@@ -32,7 +31,6 @@
             font-size: 20px;
             text-align: right; 
             color:white;
-            /* box-shadow: 20px 20px 60px #0000003f, inset -20px -20px 60px rgb(255, 255, 255); */
         }
         button{
             padding: 8px 0px;
@@ -58,43 +56,26 @@
         input:focus{
             outline: none;
         }
-        button:active{
-            background-color: rgba(56, 37, 3, 0.897);
-        }
-        #operator:active{
+        button:active,#operator:active{
             background-color: rgba(56, 37, 3, 0.897);
         }
         #ac{
             background-color: #380346fb;
         }
 
+/* media Queries */
         @media screen and (max-width: 380px) {
             input{
-            width: 180px;
-            padding: 20px 0px;
-            background-color: rgb(0, 0, 0);
-            border: 1px solid rgba(0, 0, 0, 0.105);
-            border-radius: 10px;
-            font-size: 20px;
-            text-align: right; 
-            color:white;
-            /* box-shadow: 20px 20px 60px #0000003f, inset -20px -20px 60px rgb(255, 255, 255); */
-        }
-        button{
-            padding: 8px 0px;
-            margin: 10px 5px;
-            width: 40px;
-            background-color: #03313b;
-            color: white;
-            border: 1px solid rgba(0, 0, 0, 0.105);
-            font-size: 20px;
-            border-radius: 40px;
-            cursor: pointer;
-            text-align: center;
-        }
-        #zero{
-            width: 150px;
-        }
+                width: 180px;
+            }
+            button{
+                padding: 6px 0px;
+                width: 50px;
+                font-size: 16px;
+            }
+            #zero{
+                width: 180px;
+            }
         }
     </style>
 </head>
@@ -109,104 +90,6 @@
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
 <!--Script for calculator  -->
-<script>
+<script src="script.js"></script>
 
-
-// Whole Calculator code in a variable
-    let calculatorCode = `<div class="calculator">
-
-
-        <div class="display">
-            <input type="text" id="display" readonly placeholder="_">
-        </div>
-
-        <div class="buttons">
-            <button onclick="clearDisplay()" id="ac">AC</button>
-            <button onclick="addCharOperator('.')">.</button>
-            <button onclick="addCharOperator('/')">/</button>
-            <button onclick="deleteChar()" id="operator">⌫</button>
-            <br>
-            <button onclick="addCharOperator('7')">7</button>
-            <button onclick="addCharOperator('8')">8</button>
-            <button onclick="addCharOperator('9')">9</button>
-            <button onclick="addCharOperator('+')" id="operator">+</button>
-            <br>
-            <button onclick="addCharOperator('4')">4</button>
-            <button onclick="addCharOperator('5')">5</button>
-            <button onclick="addCharOperator('6')">6</button>
-            <button onclick="addCharOperator('-')" id="operator">-</button>
-            <br>
-            <button onclick="addCharOperator('1')">1</button>
-            <button onclick="addCharOperator('2')">2</button>
-            <button onclick="addCharOperator('3')">3</button>
-            <button onclick="addCharOperator('*')" id="operator">x</button>
-            <br>
-            <button onclick="addCharOperator('0')" id="zero">0</button>
-            <button onclick="someMaths()" id="operator">=</button>
-            
-        </div>
-    </div>
-
-    <div class="credit">
-        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Made BY <a href="https://www.linkedin.com/in/lokesh-kumawat-1b1692280/" style="text-decoration: none;color: #03313b;">lokesh
-                kumawat</a></h3>
-    </div>`;
-
-
-// change body's innerHTML form lord icon to  calculator after 2secs
-    setTimeout(() => {
-        document.body.innerHTML = calculatorCode;
-    }, 2000)
-
-
-// Add's numbers and operators in an string 
-    function addCharOperator(char){
-        document.getElementById('display').value += char;
-    }
-
-
-// clear the the input field with the is 'display' on 'AC' click
-    function clearDisplay() {
-        document.getElementById('display').value = '0';
-    }
-
-
-// Delete char from the display string
-    function deleteChar(){
-        const stringValue = document.getElementById('display').value;
-        const arrayValue = stringValue.split("");
-
-        arrayValue.pop();
-
-        const reString = arrayValue.join("");
-
-        document.getElementById('display').value = reString;
-
-        if(stringValue == "Syntax Error"){
-            document.getElementById('display').value = '0';
-        }
-    }
-    
-
-
-// Calculate via eval method if there is not any error
-    function someMaths() {
-        try{
-            const result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
-        }catch(error){
-            document.getElementById('display').value = "Syntax Error";
-        }
-    }
-
-
-
-    // Method 2nd--- (will added soon... -coz use of eval is not a good practice.)
-
-
-    // function someMaths() {
-
-    // }
-
-</script>
 </html>
