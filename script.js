@@ -11,9 +11,9 @@
 
         <div class="buttons">
             <button onclick="clearDisplay()" id="ac">AC</button>
+            <button onclick="deleteChar()" id="ac-1">⌫</button>
             <button onclick="addCharOperator('.')">.</button>
-            <button onclick="addCharOperator('/')">/</button>
-            <button onclick="deleteChar()" id="operator">⌫</button>
+            <button onclick="addCharOperator('/')" id="operator">/</button>
             <br>
             <button onclick="addCharOperator('7')">7</button>
             <button onclick="addCharOperator('8')">8</button>
