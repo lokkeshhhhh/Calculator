@@ -71,7 +71,7 @@
 
         document.getElementById('display').value = reString;
 
-        if(stringValue == "Syntax Error"){
+        if(stringValue == "Syntax Error" || stringValue == "undefined"){
             document.getElementById('display').value = '0';
         }
     }
@@ -84,6 +84,10 @@
             const result = eval(document.getElementById('display').value);
         document.getElementById('display').value = result;
         }catch(error){
+            document.getElementById('display').value = "Syntax Error";
+        }
+
+        if(document.getElementById('display').value == 'undefined'){
             document.getElementById('display').value = "Syntax Error";
         }
     }
