@@ -31,6 +31,7 @@
             <button onclick="addCharOperator('*')" id="operator">x</button>
             <br>
             <button onclick="addCharOperator('0')" id="zero">0</button>
+            <button onclick="addCharOperator('00')" >00</button>
             <button onclick="someMaths()" id="operator">=</button>
             
         </div>
