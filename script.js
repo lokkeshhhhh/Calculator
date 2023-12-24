@@ -49,6 +49,8 @@
     }, 2000)
 
 
+
+
 /* "Additionally, we can set the container's and credit's display to 'none,' 
     and the icon's and credit-1's display to 'block.' After a 2-second delay(setTimeout function),
     we can change the display property from 'none' to 'block' and 'block' to 'none.'" 
