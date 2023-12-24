@@ -38,8 +38,8 @@
     </div>
 
     <div class="credit">
-        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Made BY <a href="https://www.linkedin.com/in/lokesh-kumawat-1b1692280/" style="text-decoration: none;color: #03313b;">lokesh
-                kumawat</a></h3>
+        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Made BY <a href="https://www.linkedin.com/in/lokesh-kumawat-1b1692280/" style="text-decoration: none;color: #03313b;">Lokesh
+                Kumawat</a></h3>
     </div>`;
 
 
