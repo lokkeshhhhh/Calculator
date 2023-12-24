@@ -99,7 +99,23 @@
     </style>
 </head>
 <body>
-    <div class="calculator">
+
+<!--animated icon from cdn library called   lordicon.com -->
+    <lord-icon src="https://cdn.lordicon.com/caaolypd.json" trigger="in" style="width:250px;height:250px"></lord-icon>
+
+</body>
+
+<!-- script file for 'lord-icon' -->
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+<!--Script for calculator  -->
+<script>
+
+
+// Whole Calculator code in a variable
+    let calculatorCode = `<div class="calculator">
+
+
         <div class="display">
             <input type="text" id="display" readonly placeholder="_">
         </div>
@@ -131,22 +147,31 @@
         </div>
     </div>
 
-
-    <div>
+    <div class="credit">
         <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Made BY <a href="https://www.linkedin.com/in/lokesh-kumawat-1b1692280/" style="text-decoration: none;color: #03313b;">lokesh
                 kumawat</a></h3>
-    </div>
-</body>
-<script>
+    </div>`;
 
+
+// change body's innerHTML form lord icon to  calculator after 2secs
+    setTimeout(() => {
+        document.body.innerHTML = calculatorCode;
+    }, 2000)
+
+
+// Add's numbers and operators in an string 
     function addCharOperator(char){
         document.getElementById('display').value += char;
     }
 
+
+// clear the the input field with the is 'display' on 'AC' click
     function clearDisplay() {
         document.getElementById('display').value = '0';
     }
 
+
+// Delete char from the display string
     function deleteChar(){
         const stringValue = document.getElementById('display').value;
         const arrayValue = stringValue.split("");
@@ -157,19 +182,26 @@
 
         document.getElementById('display').value = reString;
 
+        if(stringValue == "Syntax Error"){
+            document.getElementById('display').value = '0';
+        }
     }
     
 
+
+// Calculate via eval method if there is not any error
     function someMaths() {
         try{
             const result = eval(document.getElementById('display').value);
         document.getElementById('display').value = result;
         }catch(error){
-            document.getElementById('display').value = "Invalid Syntax";
+            document.getElementById('display').value = "Syntax Error";
         }
     }
 
-    // Method 2nd--- (coz use of eval is not a good practice.)
+
+
+    // Method 2nd--- (will added soon... -coz use of eval is not a good practice.)
 
 
     // function someMaths() {
