@@ -101,8 +101,14 @@
             const stringValue = document.getElementById('display').value;
             const arrayValue = stringValue.split("");
 
-            if(arrayValue[0] == 0){
-                arrayValue.shift();
+            for(let i=0;i<arrayValue.length;i++){
+                for(let i=0;i<arrayValue.length;i++){
+                    if(arrayValue[i] == 0){
+                        arrayValue.shift();
+                    }else{
+                        break;
+                    }
+                }
             }
             const reString = arrayValue.join("");
 
