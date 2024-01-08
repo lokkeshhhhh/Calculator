@@ -1,4 +1,4 @@
-"Hi there!
+Hi there!
 
 I've been working on a simple calculator project, and before you dive into the code, here are a few things to know:
 1. I added a cool animated calculator icon from lordicorn.com.
@@ -9,6 +9,6 @@ I've been working on a simple calculator project, and before you dive into the c
 4. Be aware of a glitch when dealing with expressions like "0012+0013-001442" due to leading zeros. If you've got a solution of this problem, please let me know!
 
 
-Thanks!"
+Thanks!
 
 Lokesh Kumawat.
